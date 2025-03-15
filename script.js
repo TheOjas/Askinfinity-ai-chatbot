@@ -1,4 +1,4 @@
-// DOM Elements
+
 const promptInput = document.querySelector(".prompt");
 const chatContainer = document.querySelector(".chat-container");
 const sendBtn = document.querySelector(".btn");
@@ -6,11 +6,11 @@ const micBtn = document.querySelector(".mic-btn");
 const welcomeContainer = document.getElementById("welcome-container");
 let userMessage = null;
 
-// API Configuration
+
 const API_URL =
   "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAd09_-8GWw-auFFTya4uvp-sXto8k8rqk";
 
-// Function to Create Chat Box
+
 function createChatBox(html, className) {
   const div = document.createElement("div");
   div.classList.add(className);
@@ -18,12 +18,12 @@ function createChatBox(html, className) {
   return div;
 }
 
-// Function to Auto-scroll to Bottom
+
 function scrollToBottom() {
   chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
-// Function to Handle Creator-Specific Questions
+
 function getCreatorSpecificResponse(question) {
   const lowerCaseQuestion = question.toLowerCase();
   if (
@@ -37,7 +37,7 @@ function getCreatorSpecificResponse(question) {
   return null;
 }
 
-// Function to Read AI Response Aloud
+
 function speakText(text) {
   const speech = new SpeechSynthesisUtterance(text);
   speech.lang = "en-US";
@@ -47,7 +47,6 @@ function speakText(text) {
   window.speechSynthesis.speak(speech);
 }
 
-// Function to Fetch AI Response
 async function fetchAiResponse(aiChatBox) {
   const textElement = aiChatBox.querySelector(".text");
   try {
@@ -82,7 +81,7 @@ async function fetchAiResponse(aiChatBox) {
   }
 }
 
-// Function to Display Loading AI Response
+
 function showLoading() {
   const html = `
         <div id="img">
@@ -96,7 +95,7 @@ function showLoading() {
   fetchAiResponse(aiChatBox);
 }
 
-// Handle Send Button Click
+
 sendBtn.addEventListener("click", () => {
   userMessage = promptInput.value.trim();
   if (!userMessage) {
@@ -121,7 +120,7 @@ sendBtn.addEventListener("click", () => {
   setTimeout(showLoading, 500);
 });
 
-// Handle Enter Key for Input
+
 promptInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
@@ -129,7 +128,7 @@ promptInput.addEventListener("keydown", (event) => {
   }
 });
 
-// Speech Recognition Configuration
+
 let recognition;
 if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
   const SpeechRecognition =
@@ -141,7 +140,7 @@ if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
   alert("Speech Recognition API is not supported in your browser.");
 }
 
-// Handle Microphone Button Click
+
 micBtn.addEventListener("click", () => {
   if (!recognition) {
     alert("Speech recognition is not available.");
@@ -152,7 +151,7 @@ micBtn.addEventListener("click", () => {
   micBtn.innerText = "Listening...";
 });
 
-// Handle Speech Recognition Results
+
 recognition.addEventListener("result", (event) => {
   const transcript = event.results[0][0].transcript.trim();
   userMessage = transcript;
@@ -173,13 +172,13 @@ recognition.addEventListener("result", (event) => {
   showLoading();
 });
 
-// Reset Microphone Button After Speech Recognition Ends
+
 recognition.addEventListener("end", () => {
   micBtn.disabled = false;
   micBtn.innerText = "🎤 Speak";
 });
 
-// Handle Speech Recognition Errors
+
 recognition.addEventListener("error", (event) => {
   console.error("Speech Recognition Error:", event.error);
   alert("Speech recognition failed. Please try again.");
@@ -189,5 +188,5 @@ recognition.addEventListener("error", (event) => {
 document
   .querySelector(".new-conversation-btn")
   .addEventListener("click", function () {
-    window.location.href = "speech-conversation.html"; // Redirect to the new page
+    window.location.href = "speech-conversation.html"; 
   });
