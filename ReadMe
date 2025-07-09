@@ -1,0 +1,132 @@
+🧠 Askinfinity AI Chatbot
+Askinfinity is a web-based AI chatbot that offers users a seamless and intelligent conversational experience. Built using HTML, CSS, and JavaScript, and powered by the Gemini API, Askinfinity serves as a multi-mode assistant with specialized roles including General Chat, Coding Help, Philosophy Talk, and Helpdesk Support.
+
+🌐 Live Demo: www.askinfinity.xyz
+
+📌 Table of Contents
+Features
+
+Technologies Used
+
+Getting Started
+
+Project Structure
+
+How It Works
+
+Screenshots
+
+Deployment
+
+Credits
+
+License
+
+🚀 Features
+🌍 Multi-Mode Support: Includes 4 dedicated AI personas:
+
+General Chat
+
+Coder Assistant
+
+Philosophy Bot
+
+Helpdesk Agent
+
+💾 Persistent Chat History: Chats are saved using localStorage, allowing users to revisit past conversations.
+
+🌓 Light/Dark Mode Toggle: UI includes theme switching with preference remembered across sessions.
+
+📁 File Upload & Camera Capture: Users can upload .txt, .pdf, .docx files or capture photos directly from the webcam.
+
+💬 Real-Time Typing Animation: AI responses appear with a dynamic typing animation for better UX.
+
+📱 Responsive Design: Fully functional across all screen sizes — mobile, tablet, and desktop.
+
+🧠 Powered by Gemini AI: Utilizes Gemini API for powerful and context-aware responses.
+
+🛠️ Technologies Used
+Frontend: HTML5, CSS3, JavaScript (ES6)
+
+AI Backend: Gemini API (via HTTP requests)
+
+Hosting: Cloudflare Pages
+
+Storage: localStorage for user preferences and chat history
+
+Media Handling: HTML5 FileReader, Webcam Access via getUserMedia
+
+🧰 Getting Started
+Follow these steps to run Askinfinity locally on your system:
+
+1. Clone the Repository
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/askinfinity.git
+cd askinfinity
+2. Open in Browser
+Simply open the index.html file in your web browser.
+
+3. Setup Gemini API
+
+js
+Copy
+
+📁 Project Structure
+bash
+Copy
+Edit
+askinfinity/
+│
+├── index.html             # Main homepage
+├── coder.html             # Coder chatbot mode
+├── philosophy.html        # Philosophy mode
+├── helpdesk.html          # Helpdesk chatbot mode
+├── general.html           # General chat
+│
+├── style.css              # All UI styling
+├── script.js              # Main chatbot logic
+│
+├── assets/
+│   ├── ai.png             # AI avatar
+│   ├── user.png           # User avatar
+│   ├── send.svg           # Send icon
+│   ├── loading.gif        # Typing animation
+│
+└── README.md              # Project documentation
+⚙️ How It Works
+User types a message in one of the chatbot modes.
+
+The message is displayed in the chat UI.
+
+JavaScript sends the input to Gemini API via fetch.
+
+Gemini responds with a reply which is displayed with animation.
+
+The entire chat is stored locally for persistent UX.
+
+Users can toggle dark/light mode and switch modes seamlessly.
+
+
+🌐 Deployment
+Askinfinity is deployed using Cloudflare Pages.
+
+To deploy:
+
+Push the code to your GitHub repo.
+
+Connect your repo to Cloudflare Pages.
+
+Set build configuration to static and deploy from root.
+
+👨‍💻 Credits
+Project Lead: Ojas Khatiwada
+
+AI Provider: Gemini API by Google
+
+Design & UI: Handcrafted with love using HTML/CSS/JS
+
+📄 License
+This project is licensed under the MIT License – feel free to use, modify, and distribute!
+
